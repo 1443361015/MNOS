@@ -1,0 +1,18 @@
+html,body,main,header,footer,hgroup,section,input,a,div,i,ul,li,p,label{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body,main{
+    width: 100%;
+    height: 100%;
+}
+ul,li{
+    list-style: none;
+}
+time,.rightClick ul li p,a,.newFileDel,.locFile p span,.locFile p,i.chromeDel{
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    user-select:none;
+    cursor: Default;
+}

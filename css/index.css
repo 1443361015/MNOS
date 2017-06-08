@@ -1,0 +1,86 @@
+@charset "utf-8";
+body{
+    background: #000 url(../img/images/bg/1.jpg) no-repeat;
+    background-position: center;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+main{
+    position: relative;
+    background: url(../img/water_bg.png) no-repeat;
+    background-position: center;
+    animation: waterBg 10s linear;
+    animation-iteration-count: infinite;
+}
+@keyframes waterBg {
+    0% { background-position: 0% 0%;}
+    25% { background-position: 20% 50%;}
+    50% { background-position: 100% 100%;}
+    75% { background-position: 50% 80%;}
+    100% { background-position: 0% 0%;}
+}
+main>section{
+    display: block;
+    padding-top: 100px;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.photo,.pwd{
+	width: 400px;
+    position: relative;
+}
+.pwd{
+    height: 20px;
+}
+.photo i{
+    display: block;
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+    border: 2px solid #0059ea;
+    box-shadow: 0 0 1px 10px #3d87ff;
+    margin: 0 auto;
+    background: url(../img/photo.jpg) no-repeat;
+    background-position: center;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+.photo a{
+    display: block;
+    color: #333;
+    font: 16px/30px "微软雅黑";
+    margin-top: 20px;
+}
+.pwd input{
+	width: 200px;
+    height: 20px;
+    margin: 20px auto;
+}
+.pwd a.login{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: calc(50% + 15px + 100px);
+    top: 15px;
+    background: url(../img/loginEnter.png) no-repeat;
+    background-position: left;
+    -webkit-background-size: auto 100%;
+    background-size: auto 100%;
+    cursor: pointer;
+}
+.pwd a.login:hover{
+    background-position: center;
+}
+.pwd a.login:active{
+    background-position: right;
+}
+.pwd p{
+    color: #c00;
+    font: 16px/20px "微软雅黑";
+}

@@ -1,0 +1,483 @@
+@charset "utf-8";
+body{
+    opacity: 0.3;
+    transition: 0.3s;
+}
+main{
+    position: relative;
+    background: #000 url(../img/images/bg/1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+header,footer{
+    width: 100%;
+    position: absolute;
+    
+}
+header{
+    height: calc(100% - 52px);
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    /*上到下左到右换行*/
+    -webkit-writing-mode:vertical-lr;
+    writing-mode:tb-rl;
+    writing-mode:vertical-lr
+}
+/*正常文本布局*/
+.locFile,.newFile{
+    -webkit-writing-mode:horizontal-tb;
+    writing-mode:lr-tb;
+    writing-mode:horizontal-tb;
+}
+footer{
+    height: 52px;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background: url(../img/footerBar.png);
+}
+footer .bc{
+    display: block;
+    width: 64px;
+    height: 64px;
+    background: url(../img/bc.png) no-repeat;
+    background-position: left;
+    position: absolute;
+    bottom: 0;
+}
+footer .bc:hover{
+    background-position: right;
+}
+footer .chrome{
+    display: block;
+    position: absolute;
+    left: 70px;
+    width: 80px;
+    height: 52px;
+    background: url(../img/chrome.png) no-repeat;
+    background-position: center;
+    -webkit-background-size: auto 80%;
+    background-size: auto 80%;
+    border-radius: 5px;
+}
+footer .chrome:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+footer .chromeSel{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+footer time{
+    color: #fff;
+    display: block;
+    width: 100px;
+    height: 52px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    line-height: 25px;
+    
+}
+footer button{
+    display: block;
+    width: 20px;
+    height: 52px;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    right: 0;
+    outline: none;
+    border: none;
+    border-left: 1px solid #eee;
+}
+.rightClick{
+    width: 185px;
+    /*height: 285px;*/
+    background-color: #ede4e4;
+    position: absolute;
+    z-index: 3;
+    box-shadow: 2px 2px 2px 1px #333;
+    border-radius: 1px;
+}
+.rightClick ul,.rightClick li{
+    list-style: none;
+    width: 100%;
+}
+.rightClick ul{
+    height: 100%;
+}
+.rightClick ul li{
+    height: 30px;
+    padding-left: 30px;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+.rightClick ul li p{
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    padding-left: 8px;
+    font: 14px/30px "微软雅黑";
+}
+.rightClick ul li:nth-child(1) p{
+    border-top: 0;
+}
+.rightClick ul li:hover{
+    background-color: rgba(48, 168, 222, 0.2);
+    border: 1px solid #189;
+}
+.newFile{
+    width: 500px;
+    height: 300px;
+    background-color: #e6e6e6;
+    box-shadow: 2px 2px 5px 1px #333;
+    border-radius: 1px;
+    position: absolute;
+    left: calc(50% - 250px);
+    top: calc(50% - 150px);
+    font-family: "微软雅黑";
+    color: #555;
+}
+.newFile nav{
+    width: 244px;
+    height: 200px;
+    margin: 50px auto;
+    position: relative;
+}
+.newFile div{
+    width: 244px;
+    height: 30px;
+    margin-top: 20px;
+}
+.newFile div>label{
+    display: inline-block;
+    width: 44px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    padding-right: 8px;
+}
+.newFile div>input[type="text"],.newFile div>select,.newFile div>select option{
+    width: 200px;
+    height: 30px;
+    display: inline-block;
+    float: right;
+}
+.newFile i.newFileDel,i.chromeDel{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font: 20px/30px "微软雅黑";
+    color: transparent
+}
+/*关闭浏览器*/
+i.chromeDel{
+    background-color: rgba(248, 36, 36, 0.8);
+    border-radius: 3px;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 20px;
+    color: #fff;
+    line-height: 20px;
+    border: 1px #666;
+}
+.newFile i.newFileDel:hover{
+    color: #fff;
+    background-color: #999;
+    box-shadow: 0 0 5px 0px #ccc;
+    
+}
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    text-align: center;
+}
+.file input,.replaceBg input[type="file"]{
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #fff;
+    text-decoration: none;
+}
+.newFile div > button.sub{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: 0;
+    border-radius: 3px;
+    background-color: #AADFFD;
+}
+.newFile div > button.sub:hover{
+    background-color: #78C3F3;
+    color: #fff;
+}
+/*文件夹及文件*/
+.locFile{
+    box-sizing: content-box;
+    display: inline-block;
+    float: left;
+    width: 80px;
+    height: 110px;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+.locFile p span{
+    font: 16px/20px "微软雅黑";
+    text-shadow: 2px 2px 2px #000;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/*小图标*/
+.locFileSmIcon{
+    width: 70px;
+    height: 95px;
+}
+.locFileSmIcon p span{
+    font: 13px/15px "微软雅黑";
+}
+/*中图标*/
+.locFileInIcon{
+    width: 80px;
+    height: 110px;
+}
+.locFileInIcon p span{
+    font: 16px/20px "微软雅黑";
+}
+/*大图标*/
+.locFileBigIcon{
+    width: 125px;
+    height: 150px;
+}
+.locFileBigIcon p span{
+    font: 20px/25px "微软雅黑";
+}
+
+
+.locFile:hover{
+    border: 1px solid #18f;
+    background-color: rgba(71, 155, 239, 0.3);
+}
+.locFileClick{
+    border: 1px solid #18f;
+    background-color: rgba(71, 155, 239, 0.3);
+}
+.locFile>div{
+    width: 100%;
+    height: 63%;
+    overflow: hidden;
+}
+.locFile>div>img{
+    width: 100%;
+    height: auto;
+}
+.locFile p{
+    text-align: center;
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    display:-webkit-box; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    color: #fff;
+}
+
+/*chrom浏览器{*/
+.chromeBrowser{
+    width: 100%;
+    height: calc(100% - 52px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.show{
+    display:block;
+}
+.chromeBrowser ul{
+    width: 100%;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #666;
+}
+.chromeBrowser ul li{
+    width: 200px;
+    height: 35px;
+    background-color: #f5f6f7;
+    font: 14px/30px "微软雅黑";
+}
+.chromeBrowser ul li a{
+    font: 14px/35px "微软雅黑";
+    text-decoration: none;
+    color: #333;
+    margin-left: 35px;
+}
+brow_header,brow_footer,.chromeBrowser section{
+    display: block;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+.chromeBrowser section{
+    height: 100%;
+    background-color: #f5f6f7;
+}
+brow_header{
+    height: 50px;
+    padding-left: 10px;
+}
+brow_header input{
+    width: calc(100% - 200px);
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #333;
+    font-family: "微软雅黑";
+    padding-left: 30px;
+    position: absolute;
+    left: 120px;
+    top: 0;
+    background: #fff url(../img/search.png) no-repeat;
+    background-position: left;
+    -webkit-background-size: auto 80%;
+    background-size: auto 80%;
+    outline: none;
+    border: 1px solid #666;
+    border-radius: 3px;
+}
+brow_header i{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+}
+brow_header i:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.refresh{
+    background: url(../img/refresh.png) no-repeat;
+}
+.backoff{
+    background: url(../img/backoff.png) no-repeat;
+}
+.forward{
+    background: url(../img/forward.png) no-repeat;
+}
+.backoff,.forward,.refresh{
+    background-position: center;
+    -webkit-background-size: 60%;
+    background-size: 60%;
+}
+brow_footer{
+    height: calc(100% - 85px);
+}
+brow_footer iframe{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    frameborder:0;
+}
+/*}chrom浏览器*/
+
+.openMenu{
+    width: 400px;
+    height: 600px;
+    background-color: rgba(0, 19, 69, 0.2);
+    border: 1px solid #666;
+    position: absolute;
+    bottom: 52px;
+    left: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: none;
+}
+.openMenu>ul{
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+}
+.openMenu>ul li{
+    width: 100%;
+    height: 52px;
+    position: relative;
+    border: 1px solid transparent;
+}
+.openMenu>ul li:hover{
+    border: 1px solid #113bc7;
+    background-color: rgba(17, 59, 199, 0.2);
+}
+.openMenu>ul li i{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: 10px center;
+}
+.openMenu>ul li a{
+    line-height: 52px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    margin-left: 60px;
+}
+.openMenuRight{
+    width: 150px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.openMenuRight .photo{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: -35px;
+    left: 40px;
+}
+.photo i{
+    display: block;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px solid #0059ea;
+    box-shadow: 0 0 1px 5px #3d87ff;
+    margin: 0 auto;
+    background: url(../img/photo.jpg) no-repeat;
+    background-position: center;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+}
+
+
+
+
+
